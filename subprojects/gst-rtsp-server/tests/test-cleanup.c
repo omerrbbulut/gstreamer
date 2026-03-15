@@ -65,6 +65,8 @@ main (int argc, char *argv[])
   /* ERRORS */
 failed:
   {
+    g_object_unref (server);
+    g_main_loop_unref (loop);
     g_print ("failed to attach the server\n");
     return -1;
   }
